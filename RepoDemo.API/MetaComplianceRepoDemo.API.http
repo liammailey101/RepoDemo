@@ -1,0 +1,6 @@
+@RepoDemo.API_HostAddress = http://localhost:5291
+
+GET {{RepoDemo.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
