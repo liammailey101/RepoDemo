@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace RepoDemo.GenericRepository.Repository
 {
-    public class UnitOfWork(DbContext context, ITelemetryClient telemetryClient, IMapper mapper) : IUnitOfWork, IDisposable
+    public class UnitOfWork(DbContext context, ITelemetryClient telemetryClient, IMapper mapper) : IUnitOfWork
     {
         private readonly DbContext _context = context;
         private readonly ConcurrentDictionary<Type, object> _repositories = new();
