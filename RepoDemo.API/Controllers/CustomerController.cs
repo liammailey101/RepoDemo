@@ -26,7 +26,7 @@ namespace RepoDemo.API.Controllers
             {
                 return Ok(result.Data);
             }
-            return result.IsFailure && result.Errors.Contains("Customer not found.")
+            return result.IsFailure && result.Errors.Contains("Customer not found")
                 ? NotFound(result.Errors)
                 : StatusCode(StatusCodes.Status500InternalServerError, result.Errors);
         }

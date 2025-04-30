@@ -25,7 +25,7 @@ namespace RepoDemo.Service
             {
                 var specification = new CustomerWithOrdersSpecification(id);
                 var customer = await _customerRepository.GetSingleAsync(specification);
-                return ServiceResult<Customer?>.Success(customer);
+                return customer == null ? ServiceResult<Customer?>.Failure("Customer not found") :  ServiceResult<Customer?>.Success(customer);
             }
             catch (Exception ex)
             {
